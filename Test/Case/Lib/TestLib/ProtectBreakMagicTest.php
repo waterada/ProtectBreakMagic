@@ -1,5 +1,5 @@
 <?php
-App::uses('ProtectBreakMagic', 'ProtectBreakMagic.Test/TestLib');
+App::uses('ProtectBreakMagic', 'ProtectBreakMagic.Lib/TestLib');
 
 /**
  * Class ProtectBreakMagicTest
