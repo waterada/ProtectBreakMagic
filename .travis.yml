@@ -18,6 +18,7 @@ before_script:
     'Plugin' => array('/home/travis/build/waterada/'),
     ));
     CakePlugin::loadAll();
+    debug(App::paths());
     " > cakephp/app/Config/bootstrap.php
   - echo "<?php
     class DATABASE_CONFIG {
