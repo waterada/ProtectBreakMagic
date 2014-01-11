@@ -44,4 +44,4 @@ before_script:
   - cd ./cakephp
 
 script:
-  - ./lib/Cake/Console/cake test ProtectBreakMagic Test/TestLib/ProtectBreakMagic --stderr
+  - ./lib/Cake/Console/cake test ProtectBreakMagic Lib/TestLib/ProtectBreakMagic --stderr
