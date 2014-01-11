@@ -7,7 +7,7 @@ env:
   - DB=mysql CAKEPHP=2.4.4
 
 before_script:
-  - find ../ -name "*.php"
+  - find /home/travis/build/waterada/ -name "*.php"
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
   - wget https://github.com/cakephp/cakephp/tarball/$CAKEPHP -O cake.tar.gz
   - tar xf cake.tar.gz
