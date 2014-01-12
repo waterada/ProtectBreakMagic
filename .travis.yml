@@ -13,6 +13,11 @@ before_script:
   - cp -R ../ProtectBreakMagic ./app/Plugin/ProtectBreakMagic
   - chmod -R 777 ./app/tmp
   - echo "<?php
+    App::uses('ProtectBreakMagic', 'ProtectBreakMagic.Lib/TestLib');
+    debug(App::path('Lib/TestLib', 'ProtectBreakMagic'));
+    debug(App::location('ProtectBreakMagic'));
+    " > cakephp/app/Config/bootstrap.php
+  - echo "<?php
     class DATABASE_CONFIG {
     public \$default = array(
       'datasource' => 'Database/Mysql',
