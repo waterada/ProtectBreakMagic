@@ -10,14 +10,8 @@ before_script:
   - find /home/travis/build/waterada/ -name "*.php"
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
   - git clone git://github.com/cakephp/cakephp ../cakephp && cd ../cakephp && git checkout $CAKEPHP
-  - cp -R ../ProtectBreakMagic ./app/Plugin/ProtectBreakMagic
+  - cp -R ../ProtectBreakMagic ./app/Test/ProtectBreakMagic
   - chmod -R 777 ./app/tmp
-  - echo "<?php
-    App::uses('ProtectBreakMagic', 'ProtectBreakMagic.Lib/TestLib');
-    CakePlugin::loadAll();
-    debug(App::path('Lib/TestLib', 'ProtectBreakMagic'));
-    debug(App::location('ProtectBreakMagic'));
-    " > ./app/Config/bootstrap.php
   - echo "<?php
     class DATABASE_CONFIG {
     public \$default = array(
@@ -42,4 +36,4 @@ before_script:
     }" > ./app/Config/database.php
 
 script:
-  - ./lib/Cake/Console/cake test ProtectBreakMagic Lib/TestLib/ProtectBreakMagic --stderr
+  - ./lib/Cake/Console/cake test Test/ProtectBreakMagic --stderr
