@@ -16,7 +16,7 @@ before_script:
     App::uses('ProtectBreakMagic', 'ProtectBreakMagic.Lib/TestLib');
     debug(App::path('Lib/TestLib', 'ProtectBreakMagic'));
     debug(App::location('ProtectBreakMagic'));
-    " > cakephp/app/Config/bootstrap.php
+    " > ./app/Config/bootstrap.php
   - echo "<?php
     class DATABASE_CONFIG {
     public \$default = array(
