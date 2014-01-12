@@ -1,5 +1,6 @@
 <?php
 App::uses('ProtectBreakMagic', 'Lib');
+App::load('ProtectBreakMagic');
 
 /**
  * Class ProtectBreakMagicTest
