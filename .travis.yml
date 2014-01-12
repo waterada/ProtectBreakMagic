@@ -8,18 +8,11 @@ env:
 
 before_script:
   - find /home/travis/build/waterada/ -name "*.php"
+
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
-  - wget https://github.com/cakephp/cakephp/tarball/$CAKEPHP -O cake.tar.gz
-  - tar xf cake.tar.gz
-  - mv cakephp-cakephp-* ./cakephp
-  - chmod -R 777 ./cakephp/app/tmp
-  - echo "<?php
-    App::build(array(
-    'Plugin' => array('/home/travis/build/waterada/'),
-    ));
-    CakePlugin::loadAll();
-    debug(App::paths());
-    " > cakephp/app/Config/bootstrap.php
+  - git clone git://github.com/cakephp/cakephp ../cakephp && cd ../cakephp && git checkout $CAKEPHP
+  - cp -R ../TransitionComponent ./app/Plugin/ProtectBreakMagic
+  - chmod -R 777 ./app/tmp
   - echo "<?php
     class DATABASE_CONFIG {
     public \$default = array(
@@ -41,8 +34,7 @@ before_script:
       'prefix' => '',
       'encoding' => 'utf8'
     );
-    }" > cakephp/app/Config/database.php
-  - cd ./cakephp
+    }" > ./app/Config/database.php
 
 script:
   - ./lib/Cake/Console/cake test ProtectBreakMagic Lib/TestLib/ProtectBreakMagic --stderr
