@@ -8,10 +8,9 @@ env:
 
 before_script:
   - find /home/travis/build/waterada/ -name "*.php"
-
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE cakephp_test;'; fi"
   - git clone git://github.com/cakephp/cakephp ../cakephp && cd ../cakephp && git checkout $CAKEPHP
-  - cp -R ../TransitionComponent ./app/Plugin/ProtectBreakMagic
+  - cp -R ../ProtectBreakMagic ./app/Plugin/ProtectBreakMagic
   - chmod -R 777 ./app/tmp
   - echo "<?php
     class DATABASE_CONFIG {
