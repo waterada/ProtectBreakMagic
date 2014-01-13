@@ -12,11 +12,13 @@
 # require_once(dirname(dirname(__FILE__)).'/ProtectBreakMagic.php'); //これはうまくいく
 # debug(dirname(dirname(__FILE__)).'/ProtectBreakMagic.php'); // /home/travis/build/waterada/cakephp/app/Test/Case/ProtectBreakMagic.php
 
-//30. ３段階だけあげたところに置いてみる
-require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/ProtectBreakMagic.php');
-debug(dirname(dirname(dirname(dirname(__FILE__)))).'/ProtectBreakMagic.php');
+# //30. ３段階だけあげたところに置いてみる
+# require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/ProtectBreakMagic.php'); //これはうまくいく
+# debug(dirname(dirname(dirname(dirname(__FILE__)))).'/ProtectBreakMagic.php'); // /home/travis/build/waterada/cakephp/app/ProtectBreakMagic.php
 
-
+# //31. ３段階だけあげて、Lib の下に下ろす
+require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php');
+debug(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php');
 
 //App::uses('ProtectBreakMagic', 'Lib');
 //App::load('ProtectBreakMagic');
