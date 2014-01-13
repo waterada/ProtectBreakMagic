@@ -37,7 +37,7 @@ before_script:
       'encoding' => 'utf8'
     );
     }" > ./app/Config/database.php
-  - find /home/travis/build/waterada/ -name "*.php"
+  - find /home/travis/build/waterada/cakephp/app/ -name "*.php"
 
 script:
   - ./lib/Cake/Console/cake test app Lib/ProtectBreakMagic --stderr
