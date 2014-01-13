@@ -1,14 +1,21 @@
 <?php
-//App::uses('ProtectBreakMagic', 'Lib');
-//App::load('ProtectBreakMagic');
-
+//26.
 //require_once(dirname(__FILE__).'/ProtectBreakMagic.php'); //これはうまくいく
 
-require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php');
-debug(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php');
+//28.
+require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php'); //これはうまくいかない。
+debug(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php'); // /home/travis/build/waterada/cakephp/app/Lib/ProtectBreakMagic.php このパスは正しい
+
+//なぜ自身と同じ場所にあればOKで、離れているとNG?
+
+//29.
+require_once(dirname(dirname(__FILE__)).'/ProtectBreakMagic.php');
+debug(dirname(dirname(__FILE__)).'/ProtectBreakMagic.php'); // /home/travis/build/waterada/cakephp/app/Lib/ProtectBreakMagic.php このパスは正しい
+
 
 
 //App::uses('ProtectBreakMagic', 'Lib');
+//App::load('ProtectBreakMagic');
 
 /**
  * Class ProtectBreakMagicTest
