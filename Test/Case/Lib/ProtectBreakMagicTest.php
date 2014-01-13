@@ -1,5 +1,5 @@
 <?php
-require_once("/home/travis/build/waterada/cakephp/app/Lib/ProtectBreakMagic.php");
+include_once("/home/travis/build/waterada/cakephp/app/Lib/ProtectBreakMagic.php");
 //App::uses('ProtectBreakMagic', 'Lib');
 //App::load('ProtectBreakMagic');
 
