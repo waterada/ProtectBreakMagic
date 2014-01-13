@@ -12,7 +12,7 @@ before_script:
   - git clone git://github.com/cakephp/cakephp ../cakephp && cd ../cakephp && git checkout $CAKEPHP
   - cp ../ProtectBreakMagic/Lib/ProtectBreakMagic.php ./app/Lib/ProtectBreakMagic.php
   - mkdir ./app/Test/Case/Lib
-  - cp ../ProtectBreakMagic/Test/Case/Lib/ProtectBreakMagic.php     ./app/Test/Case/ProtectBreakMagic.php
+  - cp ../ProtectBreakMagic/Test/Case/Lib/ProtectBreakMagic.php     ./app/ProtectBreakMagic.php
   - cp ../ProtectBreakMagic/Test/Case/Lib/ProtectBreakMagicTest.php ./app/Test/Case/Lib/ProtectBreakMagicTest.php
   - chmod -R 777 ./app/tmp
   - echo "<?php

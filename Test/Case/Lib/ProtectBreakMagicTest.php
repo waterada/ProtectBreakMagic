@@ -1,16 +1,20 @@
 <?php
-//26.
-//require_once(dirname(__FILE__).'/ProtectBreakMagic.php'); //これはうまくいく
+# //26.
+# require_once(dirname(__FILE__).'/ProtectBreakMagic.php'); //これはうまくいく
 
-//28.
-require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php'); //これはうまくいかない。
-debug(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php'); // /home/travis/build/waterada/cakephp/app/Lib/ProtectBreakMagic.php このパスは正しい
+# //28.
+# require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php'); //これはうまくいかない。
+# debug(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php'); // /home/travis/build/waterada/cakephp/app/Lib/ProtectBreakMagic.php このパスは正しい
 
 //なぜ自身と同じ場所にあればOKで、離れているとNG?
 
-//29.
-require_once(dirname(dirname(__FILE__)).'/ProtectBreakMagic.php');
-debug(dirname(dirname(__FILE__)).'/ProtectBreakMagic.php'); // /home/travis/build/waterada/cakephp/app/Lib/ProtectBreakMagic.php このパスは正しい
+# //29. １段階だけあげたところに置いてみる
+# require_once(dirname(dirname(__FILE__)).'/ProtectBreakMagic.php'); //これはうまくいく
+# debug(dirname(dirname(__FILE__)).'/ProtectBreakMagic.php'); // /home/travis/build/waterada/cakephp/app/Test/Case/ProtectBreakMagic.php
+
+//30. ３段階だけあげたところに置いてみる
+require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/ProtectBreakMagic.php');
+debug(dirname(dirname(dirname(dirname(__FILE__)))).'/ProtectBreakMagic.php');
 
 
 
