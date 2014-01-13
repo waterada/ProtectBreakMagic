@@ -1,7 +1,8 @@
 <?php
 //App::uses('ProtectBreakMagic', 'Lib');
 //App::load('ProtectBreakMagic');
-require_once(dirname(__FILE__).'/ProtectBreakMagic.php');
+//require_once(dirname(__FILE__).'/ProtectBreakMagic.php');
+require_once(dirname(dirname(dirname(dirname(__FILE__)))).'/Lib/ProtectBreakMagic.php');
 
 /**
  * Class ProtectBreakMagicTest
